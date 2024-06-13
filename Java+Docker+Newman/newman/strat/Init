@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "db731e15-b6ad-415f-826a-1a065e1c03e6",
+		"name": "Initialize Multiuser Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30070411"
+	},
+	"item": [
+		{
+			"name": "Group Delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{group}}\",\r\n    \"command\": \"delete\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{url}}/json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{group}} 2\",\r\n    \"command\": \"total\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Group Server Wait",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{group}} true\",\r\n    \"command\": \"server_wait\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

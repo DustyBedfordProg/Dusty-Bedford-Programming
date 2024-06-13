@@ -1,0 +1,27 @@
+{
+	"id": "13d8de57-23d7-409d-b032-76fb8090de21",
+	"name": "Local Environment",
+	"values": [
+		{
+			"key": "url",
+			"value": "http://localhost:8010",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "group",
+			"value": "PostManGroup",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "dashboard_url",
+			"value": "http://localhost:9090",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-06-11T19:58:25.936Z",
+	"_postman_exported_using": "Postman/11.1.25"
+}

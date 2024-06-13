@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "400897bb-d88f-4fb8-848f-736e9db5cbf6",
+		"name": "Simulated User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30070411"
+	},
+	"item": [
+		{
+			"name": "Group Waiting",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{group}}\",\r\n    \"command\": \"waiting\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group Status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{group}}\",\r\n    \"command\": \"status\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Group Running",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{group}}\",\r\n    \"command\": \"running\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Dashboard Spring Boot With Delay",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Function to create a delay\r",
+							"function delay(time) {\r",
+							"    return new Promise(resolve => setTimeout(resolve, time));\r",
+							"}\r",
+							"\r",
+							"// Calculate a random delay between 2 and 5 seconds (2000 to 5000 milliseconds)\r",
+							"const randomDelay = Math.floor(Math.random() * (5000 - 2000 + 1)) + 2000;\r",
+							"\r",
+							"// Wait for the random delay time before proceeding\r",
+							"delay(randomDelay).then(() => {\r",
+							"    console.log('Delay complete');\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dashboard_url}}",
+					"host": [
+						"{{dashboard_url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
